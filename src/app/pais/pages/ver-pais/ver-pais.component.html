@@ -1,0 +1,35 @@
+
+<div *ngIf="!pais; else vercont">
+    <h2>cargando...</h2>
+</div>
+
+
+<ng-template #vercont>
+    <div class="row container"> 
+        <div class="col-6">
+            <h2>Bandera de: {{pais['0'].name.common}} </h2> 
+            <img [src]="pais[0].flags.png" style="width: 180px;" alt="">
+            
+        </div>
+        
+        <div class="col-6">
+            <h3>Nombre oficial en otros idiomas</h3>
+            <ul >
+               <li> {{pais[0].translations['ces'].official}}</li>
+               <li> {{pais[0].translations['cym'].official}}</li>
+               <li> {{pais[0].translations['bre'].official}}</li>
+               <li> {{pais[0].translations['deu'].official}}</li>
+               <li> {{pais[0].translations['ara'].official}}</li>
+
+                
+
+            </ul>
+        </div>
+    </div>
+</ng-template>
+
+<div class="row">
+    <h5>Población: </h5> <p>
+        {{pais[0].population | number}}
+    </p>
+</div>

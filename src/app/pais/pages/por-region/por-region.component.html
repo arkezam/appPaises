@@ -1,0 +1,16 @@
+<div class="row container">
+    <h2>Por Region</h2>
+
+</div>
+
+<div class="row">
+    <div class="col-2"   *ngFor="let regions of region" >
+        <a name="" id="" class="btn btn-outline-primary" [href]=""
+            [ngClass]="{ 
+                'btn-primary': regionactiv==regions,
+                'btn-outline-primary': regionactiv!=regions
+            } "
+            (click)="activarReg(regions)"
+        > {{regions}} </a>
+    </div>
+</div>

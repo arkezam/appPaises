@@ -1,0 +1,27 @@
+<h2>Por Pais</h2>
+<hr>
+<div class="row">
+    <div class="col">
+        <app-input-pais (onpaisoutput)="buscar($event)" (onDebaunce)="sugerencias($event)" placeholder="Por Pais" ></app-input-pais>
+    </div>
+</div>
+
+<ul class="list-group">
+    <li class="list-group-item list-group-item-action" *ngFor="let pais of paisesSug">
+         <a [routerLink]="['pais',pais.cca2]">{{pais.name.common}}</a> 
+    </li>
+</ul>
+
+<hr>
+<div class="alert" *ngIf="error">
+    <div class="alert alert-danger" role="alert">
+        <strong>No Se encontro ninguna coincidencia con {{termino}}</strong> escribe algo diferente
+    </div>
+    
+</div>
+
+<div class="row">
+    <div class="col"> 
+        <app-tabla-pais [paisesarr]="paisesarr"></app-tabla-pais>
+    </div>
+</div>
